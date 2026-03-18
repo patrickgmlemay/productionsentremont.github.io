@@ -1,0 +1,4 @@
+Place any production stills or additional images here.
+
+Currently all images are embedded in index.html (base64).
+This folder is ready if you want to link external images instead.

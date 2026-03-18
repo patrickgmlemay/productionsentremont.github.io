@@ -1,0 +1,7 @@
+Place your press kit PDF in this folder:
+
+  FIX_EPK_Entremont_2024.pdf
+    - Used for: the Download EPK button on the Press page
+    - Referenced in index.html as: press/FIX_EPK_Entremont_2024.pdf
+
+Rename your file to match, or update the href in index.html.

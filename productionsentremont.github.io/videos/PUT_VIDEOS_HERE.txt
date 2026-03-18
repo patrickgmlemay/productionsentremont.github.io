@@ -1,0 +1,8 @@
+Place your video files in this folder:
+
+  Entremont_Introduction_Animation.mov
+    - Used for: intro overlay animation + hero background loop
+    - Referenced in index.html as: videos/Entremont_Introduction_Animation.mov
+
+If you have separate files for the intro and hero, rename them accordingly
+and update the src= paths in index.html.

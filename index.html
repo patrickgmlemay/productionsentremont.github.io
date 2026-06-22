@@ -1411,14 +1411,22 @@
       introOverlay.classList.add('hidden');
     }
 
-    // Dismiss as soon as possible — video end, error, or 6s timeout
+    // Play the full intro, then dismiss. Fall back gracefully if it can't load/play.
+    var introFallback = setTimeout(dismissIntro, 12000); // safety cap: never stay stuck
+    function armIntroFallback() {
+      if (introVideo && isFinite(introVideo.duration) && introVideo.duration > 0) {
+        clearTimeout(introFallback);
+        // dismiss just after the clip's natural end (covers blocked-autoplay, where 'ended' never fires)
+        introFallback = setTimeout(dismissIntro, introVideo.duration * 1000 + 600);
+      }
+    }
     if (introVideo) {
       introVideo.addEventListener('ended', dismissIntro);
       introVideo.addEventListener('error', dismissIntro);
       introVideo.addEventListener('abort', dismissIntro);
+      introVideo.addEventListener('loadedmetadata', armIntroFallback);
+      if (introVideo.readyState >= 1) armIntroFallback(); // already loaded (cached)
     }
-    // Always dismiss after 6 seconds regardless
-    setTimeout(dismissIntro, 1500);
 
     /* ══════════════════════════════════════════
        PAGE ROUTING

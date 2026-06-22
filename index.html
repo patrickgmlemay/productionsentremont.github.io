@@ -193,13 +193,17 @@
     #page-home { min-height: 100vh; }
 
     .hero {
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100vh;
       min-height: 640px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      z-index: 1;
     }
     .hero-video-bg {
       position: absolute;
@@ -327,6 +331,11 @@
 
     /* ─── Films Strip on Home ─── */
     .home-films {
+      position: relative;
+      z-index: 2;
+      margin-top: 100vh;
+      min-height: 100vh;
+      box-shadow: 0 -30px 60px rgba(0,0,0,0.35);
       background: var(--navy-mid);
       padding: 96px 56px;
     }
@@ -1271,7 +1280,7 @@
             <div class="fix-trailer">
               <p class="detail-label" data-en="Trailer" data-fr="Bande-annonce">Trailer</p>
               <div class="vimeo-container" id="vimeo-fix">
-                <iframe src="https://player.vimeo.com/video/1118529254?h=c88eb2209d&title=0&byline=0&portrait=0&color=e8e2d9" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
+                <iframe src="https://player.vimeo.com/video/1162307492?title=0&byline=0&portrait=0&color=e8e2d9" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
               </div>
               <div class="detail-section" style="margin-top:36px;">
                 <p class="detail-label" data-en="Synopsis" data-fr="Synopsis">Synopsis</p>
